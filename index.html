@@ -38,7 +38,7 @@
                 var date = formatAMPM(new Date())
                 var data = new Date()
 
-                if (date.slice(5, 8) == result.results.sunrise.slice(8, 10)) {  //Verifica se é AM
+                if (date.slice(6, 8) == result.results.sunrise.slice(8, 10)) {  //Verifica se é AM
                     if (parseInt(date) == parseInt(result.results.sunrise) && data.getMinutes() <= parseInt(result.results.sunrise.slice(2, 4))
                         || parseInt(date) < parseInt(result.results.sunrise)) {
                         document.getElementById('container').style.backgroundColor = "#29324c"
@@ -52,8 +52,7 @@
                         dia = true
                     }
                 }
-
-                if (date.slice(5, 8) == result.results.sunset.slice(8, 10)) { //Verifica se é PM
+                if (date.slice(6, 8) == result.results.sunset.slice(8, 10)) { //Verifica se é PM
                     if (parseInt(date) == parseInt(result.results.sunset) && data.getMinutes() <= parseInt(result.results.sunset.slice(2, 4))
                         || parseInt(date) < parseInt(result.results.sunset)) {
                         document.getElementById('container').style.backgroundColor = "#bbefff"
@@ -133,10 +132,15 @@
         var hours = date.getHours();
         var minutes = date.getMinutes();
         var ampm = hours >= 12 ? 'PM' : 'AM';
+        if (hours == 0) ampm = 'PM'
         hours = hours % 12;
         hours = hours ? hours : 12;
         minutes = minutes < 10 ? '0' + minutes : minutes;
-        var strTime = hours + ':' + minutes + ' ' + ampm;
+        if (hours >= 10) {
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+        } else {
+            var strTime = "0" + hours + ':' + minutes + ' ' + ampm
+        };
         return strTime;
     }
 
