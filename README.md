@@ -10,7 +10,7 @@
     <p>Para testar baixe o projeto e abra o arquivo index.html, ou acesse clicando <a href="https://leomvidal10.github.io/DayAndNigth/">aqui</a>.</p>
     <br />
     <h3>Imagens</h3>
-    <img src="https://github.com/leomvidal10/DayAndNigth/blob/main/resources/img/demo1.png" alt="Logo" width="1280" height="470">
-    <img src="https://github.com/leomvidal10/DayAndNigth/blob/main/resources/img/demo2.png" alt="Logo" width="1280" height="470">
+    <img src="https://github.com/leomvidal10/DayAndNigth/blob/main/resources/img/demo1.png" alt="Logo" width="1280" height="490">
+    <img src="https://github.com/leomvidal10/DayAndNigth/blob/main/resources/img/demo2.png" alt="Logo" width="1280" height="490">
   </p>
 </p>
