@@ -1,0 +1,95 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 777.47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #56a66d;
+      }
+
+      .cls-2 {
+        fill: #7c5054;
+      }
+
+      .cls-3 {
+        fill: #9393a9;
+      }
+
+      .cls-4 {
+        fill: #b0b0c0;
+      }
+
+      .cls-5 {
+        fill: #ce4e69;
+      }
+
+      .cls-6 {
+        fill: #f2efc4;
+      }
+
+      .cls-7 {
+        fill: #e0dbb4;
+      }
+
+      .cls-8 {
+        fill: #ff4e69;
+      }
+
+      .cls-9 {
+        fill: #fff;
+      }
+
+      .cls-10 {
+        fill: #f5f5f5;
+      }
+
+      .cls-11 {
+        fill: #dbdbdb;
+        stroke: #f5f5f5;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Tree">
+      <circle class="cls-1" cx="820.5" cy="588.97" r="28.5"/>
+      <circle class="cls-1" cx="861.5" cy="610.97" r="28.5"/>
+      <circle class="cls-1" cx="780.5" cy="610.97" r="28.5"/>
+      <circle class="cls-1" cx="820.5" cy="616.97" r="28.5"/>
+      <circle class="cls-1" cx="182.5" cy="589.97" r="28.5"/>
+      <circle class="cls-1" cx="223.5" cy="611.97" r="28.5"/>
+      <circle class="cls-1" cx="142.5" cy="611.97" r="28.5"/>
+      <circle class="cls-1" cx="182.5" cy="617.97" r="28.5"/>
+      <circle class="cls-1" cx="1213.5" cy="589.97" r="28.5"/>
+      <circle class="cls-1" cx="1254.5" cy="611.97" r="28.5"/>
+      <circle class="cls-1" cx="1173.5" cy="611.97" r="28.5"/>
+      <circle class="cls-1" cx="1213.5" cy="617.97" r="28.5"/>
+      <circle class="cls-1" cx="378.5" cy="381.97" r="54.5"/>
+      <path class="cls-2" d="M378,375.47h0a4,4,0,0,0-4,4l-2,250h13l-2.95-250a4,4,0,0,0-4-4Z"/>
+      <path class="cls-2" d="M392.26,385.15l-15.36,11.4,4.62,6.16,14.7-12.85a3.08,3.08,0,0,0,.37-4.34h0a3.06,3.06,0,0,0-4.31-.38Z"/>
+      <circle class="cls-1" cx="1021.71" cy="446.06" r="40.59"/>
+      <path class="cls-2" d="M1022.08,441.22h0a3,3,0,0,1,3,3h0l1.47,186.25h-9.68l2.2-186.22a3,3,0,0,1,3-3Z"/>
+      <path class="cls-2" d="M1011.46,448.47l11.44,8.5-3.44,4.58-11-9.57a2.3,2.3,0,0,1-.28-3.23h0a2.3,2.3,0,0,1,3.24-.31Z"/>
+      <circle class="cls-1" cx="134.44" cy="288.94" r="74.47"/>
+      <path class="cls-2" d="M135.11,280.06h0a5.51,5.51,0,0,1,5.52,5.47l2.69,341.6H125.56l4-341.62A5.51,5.51,0,0,1,135.11,280.06Z"/>
+      <path class="cls-2" d="M115.64,293.28l21,15.59-6.31,8.41-20.09-17.56a4.19,4.19,0,0,1-.52-5.91v0h0A4.22,4.22,0,0,1,115.64,293.28Z"/>
+      <circle class="cls-1" cx="290.63" cy="414.24" r="46.37"/>
+      <path class="cls-2" d="M290.21,408.71h0a3.44,3.44,0,0,0-3.44,3.41L285.1,624.83h11.06l-2.51-212.72A3.46,3.46,0,0,0,290.21,408.71Z"/>
+      <path class="cls-2" d="M302.33,417l-13.06,9.7,3.93,5.24L305.71,421a2.62,2.62,0,0,0,.31-3.69h0A2.63,2.63,0,0,0,302.33,417Z"/>
+    </g>
+    <g id="floor">
+      <rect class="cls-3" y="624.47" width="1366" height="82"/>
+      <rect class="cls-4" y="706.47" width="1366" height="71"/>
+    </g>
+    <g id="House">
+      <rect class="cls-5" x="569.17" y="588.47" width="228.23" height="36"/>
+      <rect class="cls-6" x="569.17" y="175.42" width="227.83" height="413.05"/>
+      <polygon class="cls-7" points="798.45 173.64 798.45 175.5 797 175.5 797 183.82 569.17 183.82 569.17 175.5 568.78 175.5 568.78 173.64 798.45 173.64"/>
+      <rect class="cls-8" x="559.53" y="147.47" width="247.47" height="28.03"/>
+      <rect class="cls-9" x="623.68" y="604.48" width="118.65" height="9.74"/>
+      <rect class="cls-10" x="609.57" y="614.23" width="147.1" height="10.24"/>
+      <rect class="cls-10" x="635.16" y="595.47" width="95.57" height="9.01"/>
+      <path class="cls-11" d="M683,537.47h0a21,21,0,0,1,21,21h0v37H662v-37a21,21,0,0,1,21-21Z"/>
+      <path class="cls-10" d="M693,567.47h0a3,3,0,0,1,3,3h0a3,3,0,0,1-3,3h0a3,3,0,0,1-3-3h0A3,3,0,0,1,693,567.47Z"/>
+    </g>
+  </g>
+</svg>

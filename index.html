@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia/Noite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./resources/img//icon.png">
+</head>
+
+<body>
+    <div id="container">
+        <div id="sollua">
+            <!-- Sol ou Lua -->
+        </div>
+        <div id="janelas">
+            <!-- Janelas -->
+        </div>
+    </div>
+    <div id="options">
+        <button onclick="dayNigthButton()">Noite/Dia</button>
+        <button onclick="janelasOnOffButton()">Luzes ON/Luzes OFF</button>
+    </div>
+</body>
+
+<script>
+    var luzes = Boolean
+    var dia = Boolean
+
+    dayNigth()
+    function dayNigth() {
+        var xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var result = JSON.parse(this.responseText);
+                var date = formatAMPM(new Date())
+                var data = new Date()
+
+                if (date.slice(5, 8) == result.results.sunrise.slice(8, 10)) {  //Verifica se é AM
+                    if (parseInt(date) == parseInt(result.results.sunrise) && data.getMinutes() <= parseInt(result.results.sunrise.slice(2, 4))
+                        || parseInt(date) < parseInt(result.results.sunrise)) {
+                        document.getElementById('container').style.backgroundColor = "#29324c"
+                        addJanelas(false)
+                        luzes = false
+                        dia = false
+                    } else {
+                        document.getElementById('container').style.backgroundColor = "#bbefff"
+                        addJanelas(true)
+                        luzes = true
+                        dia = true
+                    }
+                }
+
+                if (date.slice(5, 8) == result.results.sunset.slice(8, 10)) { //Verifica se é PM
+                    if (parseInt(date) == parseInt(result.results.sunset) && data.getMinutes() <= parseInt(result.results.sunset.slice(2, 4))
+                        || parseInt(date) < parseInt(result.results.sunset)) {
+                        document.getElementById('container').style.backgroundColor = "#bbefff"
+                        addJanelas(true)
+                        luzes = true
+                        dia = true
+                    } else {
+                        document.getElementById('container').style.backgroundColor = "#29324c"
+                        addJanelas(false)
+                        luzes = false
+                        dia = false
+                    }
+                }
+                console.log(date)
+                console.log('sunrise: ' + result.results.sunrise)
+                console.log('sunset: ' + result.results.sunset)
+            }
+        }
+
+        xhttp.open("GET", "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&formatted=1")
+        xhttp.send();
+    }
+
+    function addJanelas(bool) {
+        var janelasDiv = document.getElementById('janelas');
+        var solluaDiv = document.getElementById('sollua');
+        var dia = bool;
+
+        janelasDiv.innerHTML = ""
+        solluaDiv.innerHTML = ""
+        if (dia == true) {
+            for (var i = 0; i < 12; i++) {
+                janelasDiv.innerHTML += "<img onclick='janelaTurn(" + i + "," + bool + ")' id='janela' src='resources/img/JanelaApagada.svg' alt='janela' key='" + i + "'/>"
+            }
+            solluaDiv.innerHTML += "<img src='resources/img/Sol.svg' alt='sol-lua' />"
+        } else {
+            for (var i = 0; i < 12; i++) {
+                janelasDiv.innerHTML += "<img onclick='janelaTurn(" + i + "," + bool + ")' id='janela' src='resources/img/JanelaAcessa.svg' alt='janela' key='" + i + "'/>"
+            }
+            solluaDiv.innerHTML += "<img src='resources/img/Lua.svg' alt='sol-lua' />"
+        }
+
+    }
+
+    function dayNigthButton() {
+        var solluaDiv = document.getElementById('sollua');
+        solluaDiv.innerHTML = ""
+        if (dia == false) {
+            document.getElementById('container').style.backgroundColor = "#bbefff"
+            solluaDiv.innerHTML += "<img src='resources/img/Sol.svg' alt='sol-lua' />"
+            dia = true
+        } else {
+            document.getElementById('container').style.backgroundColor = "#29324c"
+            solluaDiv.innerHTML += "<img src='resources/img/Lua.svg' alt='sol-lua' />"
+            dia = false
+        }
+
+    }
+
+    function janelasOnOffButton() {
+        var janelasDiv = document.getElementById('janelas');
+        janelasDiv.innerHTML = ""
+        if (luzes == true) {
+            for (var i = 0; i < 12; i++) {
+                janelasDiv.innerHTML += "<img onclick='janelaTurn(" + i + "," + false + ")' id='janela' src='resources/img/JanelaAcessa.svg' alt='janela' key='" + i + "'/>"
+                luzes = false
+            }
+        } else {
+            for (var i = 0; i < 12; i++) {
+                janelasDiv.innerHTML += "<img onclick='janelaTurn(" + i + "," + true + ")' id='janela' src='resources/img/JanelaApagada.svg' alt='janela' key='" + i + "'/>"
+                luzes = true
+            }
+        }
+    }
+
+    function formatAMPM(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+    }
+
+    function janelaTurn(id, bool) {
+        var JanelaOn = document.createElement("img")
+        JanelaOn.src = "resources/img/JanelaAcessa.svg"
+        JanelaOn.id = "janela"
+        JanelaOn.alt = "janela"
+        JanelaOn.setAttribute("key", id)
+        JanelaOn.setAttribute("onclick", "janelaTurn(" + id + "," + false + ")")
+
+        var JanelaOff = document.createElement("img")
+        JanelaOff.src = "resources/img/JanelaApagada.svg"
+        JanelaOff.id = "janela"
+        JanelaOff.alt = "janela"
+        JanelaOff.setAttribute("key", id)
+        JanelaOff.setAttribute("onclick", "janelaTurn(" + id + "," + true + ")")
+
+        for (var i = 0; i < 12; i++) {
+            var janelas = document.getElementById("janelas")
+            var janela = janelas.getElementsByTagName("img")[i]
+            if (janela.getAttribute("key") == id) {
+                if (bool == true) {
+                    janela.replaceWith(JanelaOn)
+                } else {
+                    janela.replaceWith(JanelaOff)
+                }
+            }
+        }
+
+    }
+</script>
+
+</html>
